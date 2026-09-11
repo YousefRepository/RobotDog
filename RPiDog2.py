@@ -17,7 +17,7 @@ def angleCalc(x, y):
     c = math.sqrt(x**2 + y**2)
     Bangle = math.degrees(math.acos((a**2 + c**2 - b**2)/(2*a*c)))
     Cangle = math.degrees(math.acos((a**2+b**2-c**2)/(2*a*b)))
-    offsetFunction = float(181.9*(euler)**(-0.2929*c))
+    offsetFunction = float(181.9*(euler)**(-0.2929*c)) #offset function from MATLAB
     move_servo(13, 180-Cangle) #default
     move_servo(12, Bangle-offsetFunction-angle) #default
     time.sleep(delay)
@@ -30,7 +30,7 @@ a = 10
 b = 13
 
 x = -5 #int(input("input x coordinate in cm: "))#-10
-y = -14#int(input("input y coordinate in cm: "))#-15
+y = -14#int(input("input y coordinate in cm: "))#-15 it is cartesian origin point at shoulder therefore has to be negative
 
 time.sleep(3)
 
